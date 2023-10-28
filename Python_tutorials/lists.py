@@ -26,7 +26,7 @@ The first item has index [0], the second has index [1], the third has index [2] 
 # Allow Duplicates
 #   - list can have items with the same value
 
-"""Example"""
+"""Example."""
 # Lists allow duplicate values:
 
 thislist = ["apple", "banana", "cherry", "apple", "cherry"]
