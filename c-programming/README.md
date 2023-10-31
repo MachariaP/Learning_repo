@@ -138,8 +138,7 @@ The `write` system call is used to write data to a file descriptor.
 
 ## Contributors
 
-- Your Name
-- Additional contributors if any
+- Phinehas Macharia
 
 ## License
 
