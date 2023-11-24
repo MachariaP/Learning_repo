@@ -14,3 +14,15 @@ convert date to string using the function str()
 """
 
 print("Today's date is: " + str(date.today()))
+
+"""
+
+If you only need the current time without the date, you should use the datetime module, 
+but specifically the time class within it. 
+Here's an example:
+"""
+from datetime import datetime
+
+current_time = datetime.now().time()
+print("Current time is: ", current_time)
+
