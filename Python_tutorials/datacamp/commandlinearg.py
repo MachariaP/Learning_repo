@@ -11,5 +11,5 @@ import sys
 print(sys.argv)
 print(sys.argv[0])   # program name
 print(sys.argv[1])   # first arg
-
-#run [python3 commandlinearg.py 2023-24-11] to see results
+print(sys.argv[2])   # second arg
+#run [python3 commandlinearg.py 2023-26-11 Sunday] to see results
