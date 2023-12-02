@@ -18,7 +18,7 @@ def my_function(counter=89):
 print(my_function())
 
 
-def my_function(counter=89):
+def my_function():
     print("In my function")
 
 my_function()
