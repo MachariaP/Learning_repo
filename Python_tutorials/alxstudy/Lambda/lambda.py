@@ -33,3 +33,18 @@ x = lambda a, b, c : a + b + c
 print(x(5, 6, 2))
 # Expected output : 13
 
+# Example 4
+# Creating Functions on the Fly
+"""
+`myfunc` function returns a lambda function that multiplies its argument by `n`.
+This allows the creation of specific functions (`mydoubler` and `mytripler`) 
+with predefined multipliers.
+"""
+def myfunc(n):
+    return lambda a: a * n
+
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+
+print(mydoubler(11))    # OUtput: 22
+print(mytripler(11))    # Output: 33
