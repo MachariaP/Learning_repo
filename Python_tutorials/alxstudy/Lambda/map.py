@@ -40,6 +40,7 @@ F = list(map(lambda x: (float(9)/5)*x + 32, C))
 print(F)
 
 # Working with Multiple LIsts
+
 # The lambda function is applied to each set of elements at the same index in the list `a`, `b`, and `c`.
 
 a = [1, 2, 3, 4]
@@ -49,3 +50,17 @@ c = [-1, -4, 5, 9]
 result = list(map(lambda x, y, z: x + y + z, a, b, c))
 print(result)
 
+# Handling Different List Lengths
+
+"""
+If one list is shorter, `map()` stops when the shortest list is consumed.
+`map()` with lambda functions is a handy way to apply a function to elements of one or more lists without needing explicit loops.
+
+"""
+
+a = [1, 2, 3]
+b = [17, 12, 11, 10]
+c = [-1, -4, 5, 9]
+
+result = list(map(lambda x, y, z: 2.5*x + 2*y - z, a, b, c))
+print(result)
