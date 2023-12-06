@@ -29,3 +29,23 @@ temperatures_in_Celsius = list(C)
 print(temperatures_in_Fahrenheit)
 print(temperatures_in_Celsius)
 
+# Example with Lambda
+"""
+We will use a lambda function instead of explicitly defining `fahrenheit()`
+Lamba function is like a quick, throwaway function for a specific task.
+"""
+C = [39.2, 36.5, 37.3, 38, 37.8] 
+F = list(map(lambda x: (float(9)/5)*x + 32, C))
+
+print(F)
+
+# Working with Multiple LIsts
+# The lambda function is applied to each set of elements at the same index in the list `a`, `b`, and `c`.
+
+a = [1, 2, 3, 4]
+b = [17, 12, 11, 10]
+c = [-1, -4, 5, 9]
+
+result = list(map(lambda x, y, z: x + y + z, a, b, c))
+print(result)
+
