@@ -42,7 +42,12 @@ print(F)
 # Working with Multiple LIsts
 
 # The lambda function is applied to each set of elements at the same index in the list `a`, `b`, and `c`.
-
+"""
+map() can be applied to more than one list. The lists don't have to have the same length. 
+map() will apply its lambda function to the elements of the argument lists, 
+i.e. it first applies to the elements with the 0th index, 
+then to the elements with the 1st index until the n-th index is reached:
+"""
 a = [1, 2, 3, 4]
 b = [17, 12, 11, 10]
 c = [-1, -4, 5, 9]
