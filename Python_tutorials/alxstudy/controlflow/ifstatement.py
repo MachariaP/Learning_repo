@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# if statement
 x = int(input("PLease enter an integer: "))
 
 if x < 0:
@@ -11,4 +12,11 @@ elif x == 1:
     print('Single')
 else:
     print('More')
+
+# for statement
+ 
+ # Measure some strings:
+ words = ['cat', 'Window', 'defenestrate']
+ for w in words:
+     print(w, len(w))
 
