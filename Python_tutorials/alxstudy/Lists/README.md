@@ -1,8 +1,10 @@
 # User Management System
 
-<iframe src="https://gifer.com/embed/6vIk" width=480 height=355.200 frameBorder="0" allowFullScreen></iframe><p><a href="https://gifer.com"></a></p>
 
 This Python script is a simple user management system that allows you to perform operations on a list of movies. It provides a command-line interface with basic functionalities such as listing all movies, adding a new movie, deleting a movie, and exiting the program.
+
+
+<iframe src="https://gifer.com/embed/6vIk" width=480 height=355.200 frameBorder="0" allowFullScreen></iframe>
 
 ## Usage
 
