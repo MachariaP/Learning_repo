@@ -9,16 +9,24 @@ def display_menu():
     print()
 
 def list(movie_list):
-    i = 1
-    for movie in movie_list:
-        print(str(i) + ". " + movie)
+    if len(movie_list) == 0:
+        print("There are no movies in the list.\n")
+        rerurn
+    else:
+        i = 1
+    for row in movie_list:
+        print(str(i) + ". " + row[0] + " (" + str(row[1]) + ") ")
         i += 1
     print()
 
 def add(movie_list):
-    movie = input("Name: ")
+    name = input("Name: ")
+    year = input("Year: ")
+    movie = []
+    movie.append(name)
+    movie.append(year)
     movie_list.append(movie)
-    print(movie + " was added.\n")
+    print(movie[0] + " was added.\n")
 
 def delete(movie_list):
     number = int(input("Number: "))
@@ -26,13 +34,13 @@ def delete(movie_list):
         print("Invalid movie number.\n")
     else:
         movie = movie_list.pop(number-1)
-        print(movie + " was deleted.\n")
+        print(movie[0] + " was deleted.\n")
 
 def main():
     # LIst of movies
-    movie_list = ["Monty Python and the Holy Grail",
-                    "on the Waterfront",
-                    "Cat on a Hot Tin Roof"]
+    movie_list = [["Monty Python and the Holy Grail", 1975, 9.99],
+                    ["on the Waterfront", 1979, 12.3],
+                    ["Cat on a Hot Tin Roof", 1983, 7.50]]
     
     # Display the menu
     display_menu()
