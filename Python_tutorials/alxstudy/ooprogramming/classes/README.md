@@ -35,7 +35,8 @@ In summary, the process involves defining a class, creating an instance, verifyi
 These steps form the foundation for working with classes and objects in Python.
 
 **Class and Object Variables**
-The provided example demonstrates the use of class and object variables in Python, along with the concept of class methods and static methods. Let's break down the key points:
+
+-The provided example demonstrates the use of class and object variables in Python, along with the concept of class methods and static methods. Let's break down the key points:
 
 1. **Class Variables vs Object Variables:**
    - `population` is a class variable shared by all instances of the `Robot` class. It is accessed as `Robot.population`.
