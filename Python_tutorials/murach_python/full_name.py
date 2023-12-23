@@ -13,7 +13,13 @@ Example:
 first_name = "Ada"
 last_name = "Lovelace"
 full_name = f"{first_name} {last_name}"
-print(full_name)  # Output: Ada Lovelace
+message = full_name
+full_name = "{} {}".format(first_name, last_name)
+print(message)
+
+print(f"Hello, {full_name.title()}!")
+
+print(full_name)
 """
 
 first_name = "Ada"
@@ -26,3 +32,4 @@ print(message)
 print(f"Hello, {full_name.title()}!")
 
 print(full_name)
+
