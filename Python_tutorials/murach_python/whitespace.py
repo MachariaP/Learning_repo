@@ -47,3 +47,18 @@ print()
 language = 'Python3 '
 language = language.rstrip()
 print(language)
+
+'''
+    You can also strip whitespace from the left side of a string
+    using the lstrip() method.
+    Also its possible to from both sides using strip()
+
+'''
+
+print()
+language = ' Python '
+print(language)
+print(language.rstrip())
+print(language.lstrip())
+language = language.strip()
+print(language)
