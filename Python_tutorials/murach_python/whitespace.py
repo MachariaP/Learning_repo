@@ -34,3 +34,16 @@ print()
 print(language.rstrip())
 print()
 print(language)
+
+'''
+    In the previous example the .rstrip only removed the whitespace 
+    temporarily
+    To remove the whitespace permanently, associate the stripped value with
+    the variable name
+
+'''
+
+print()
+language = 'Python3 '
+language = language.rstrip()
+print(language)
