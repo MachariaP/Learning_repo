@@ -1,9 +1,9 @@
-#!/bin/python3
+#!/usr/bin/python3
 
 """
 This is the "example" module.
 
-The example module supplies one function, functional(). For example,
+The example module supplies one function, factorial().  For example,
 
 >>> factorial(5)
 120
@@ -21,7 +21,7 @@ def factorial(n):
         ...
     ValueError: n must be >= 0
 
-    Factorials of floats are okey, but the float must be an exact integer:
+    Factorials of floats are OK, but the float must be an exact integer:
     >>> factorial(30.1)
     Traceback (most recent call last):
         ...
@@ -41,14 +41,15 @@ def factorial(n):
         raise ValueError("n must be >= 0")
     if math.floor(n) != n:
         raise ValueError("n must be exact integer")
-    if n+1 == n: # catch a value like 1e300
+    if n+1 == n:  # catch a value like 1e300
         raise OverflowError("n too large")
     result = 1
-    factorial = 2
+    factor = 2
     while factor <= n:
         result *= factor
         factor += 1
     return result
+
 
 if __name__ == "__main__":
     import doctest
