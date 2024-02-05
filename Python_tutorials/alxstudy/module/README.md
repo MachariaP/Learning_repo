@@ -1,102 +1,26 @@
-Let's go through your code step by step and explain each part:
+- **Running a Python Module:**
+  - When you run a Python module using `python fibo.py <arguments>`, the module's code is executed.
+  - It behaves as if it were imported, but with the `__name__` set to `"__main__"`.
 
-```python
-#!/usr/bin/python3
+- **Using a Module as a Script:**
+  - You can make a module usable as both a script and an importable module by adding the following code at the end:
+    ```python
+    if __name__ == "__main__":
+        import sys
+        fib(int(sys.argv[1]))
+    ```
+  - This allows the file to be executed as a script or imported as a module.
 
-def my_function(counter=89):
-    print("counter: {}".format(counter))
+- **Command Line Parsing:**
+  - The code that parses the command line (`fib(int(sys.argv[1]))`) runs only if the module is executed as the main file.
 
-my_function()
-```
+- **Example Usage as a Script:**
+  - Running the module as a script: `$ python fibo.py 50`
+  - Output: `1 1 2 3 5 8 13 21 34`
 
-1. **Function Definition 1:**
-   - Function `my_function` is defined with a default parameter `counter` set to 89.
-   - It prints the value of the counter using the `print` statement.
+- **Module Import Behavior:**
+  - If the module is imported, the code inside the `if __name__ == "__main__":` block is not run.
 
-2. **Function Call 1:**
-   - `my_function()` is called without any argument.
-   - Output: `counter: 89` (because the default value of `counter` is used).
-
-```python
-def my_function(counter=89):
-    print("counter: {}".format(counter))
-
-my_function(12)
-```
-
-3. **Function Definition 2:**
-   - Function `my_function` is redefined (overwriting the previous definition) with the same signature but different implementation.
-   - It prints the value of the counter using the `print` statement.
-
-4. **Function Call 2:**
-   - `my_function(12)` is called with the argument 12.
-   - Output: `counter: 12` (because the provided argument overrides the default value).
-
-```python
-def my_function(counter=89):
-    return counter + 1
-
-print(my_function())
-```
-
-5. **Function Definition 3:**
-   - Function `my_function` is redefined again with the same signature but a different implementation.
-   - It returns the value of `counter + 1`.
-
-6. **Function Call 3:**
-   - `print(my_function())` calls the latest definition of `my_function` without any argument.
-   - Output: `90` (because the default value of `counter` is used and returned).
-
-```python
-def my_function():
-    print("In my function")
-
-my_function()
-```
-
-7. **Function Definition 4:**
-   - Function `my_function` is redefined again without any parameters.
-   - It prints "In my function".
-
-8. **Function Call 4:**
-   - `my_function()` calls the latest definition of `my_function`.
-   - Output: `In my function`.
-
-```python
-def my_function(counter):
-    print("counter: {}".format(counter))
-
-my_function(12)
-```
-
-9. **Function Definition 5:**
-   - Function `my_function` is redefined with a single parameter `counter`.
-   - It prints the value of the counter using the `print` statement.
-
-10. **Function Call 5:**
-   - `my_function(12)` calls the latest definition of `my_function` with the argument 12.
-   - Output: `counter: 12`.
-
-```python
-def my_function():
-    print("In my function")
-
-my_function
-```
-
-11. **Function Definition 6:**
-   - Function `my_function` is redefined again without any parameters.
-   - It prints "In my function".
-
-12. **Function Not Called:**
-   - `my_function` is referenced without being called (no parentheses).
-   - It doesn't print anything because the function is not executed.
-
-Expected Output:
-- `counter: 89`
-- `counter: 12`
-- `90`
-- `In my function`
-- `counter: 12`
-
-Note: The last function definition (`my_function`) without any parameters is not called, so it doesn't produce any output.
+- **Common Use Cases:**
+  - Often used to provide a convenient user interface to a module.
+  - Useful for testing purposes; running the module as a script can execute a test suite.
