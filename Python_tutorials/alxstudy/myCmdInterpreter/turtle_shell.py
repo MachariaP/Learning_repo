@@ -103,12 +103,12 @@ class TurtleShell(cmd.Cmd):
             self.file.close()
             self.file = None
 
-    # Convert a series of zero or more numbers to an argument tuple
-    def parse(arg):
-        'Convert a series of zero or more numbers to an argument tuple'
-        return tuple(map(int, arg.split()))
+# Convert a series of zero or more numbers to an argument tuple
+def parse(arg):
+    'Convert a series of zero or more numbers to an argument tuple'
+    return tuple(map(int, arg.split()))
 
 
-    if __name__ == '__main__':
-        # Start the turtle shell command loop
-        TurtleShell().cmdloop()
+if __name__ == '__main__':
+    # Start the turtle shell command loop
+    TurtleShell().cmdloop()
