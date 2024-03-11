@@ -1,7 +1,9 @@
-let number = 0;
+#!/usr/bin/node
 
-while (number <= 100)
+for (let step = 0;
+	step < 5;
+	step++)
 {
-	console.log(number);
-	number = number + 2;
+	// Runs 5 times, with values of step 0 through 4.
+	console.log('Walking east one step');
 }
