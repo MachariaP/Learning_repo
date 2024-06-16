@@ -7,3 +7,7 @@ def index(response):
 
 def dashboard(response):
     return HttpResponse("<h1>Dashboard!</h1>")
+
+def login(response):
+    return HttpResponse("<h1>Login!</h1>"))
+

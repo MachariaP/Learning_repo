@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ALX SE Program</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            animation: gradient 5s ease-in-out infinite;
+            background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 75px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </div>
+
+    <div class="main">
+        <h1>Welcome to the ALX SE Program</h1>
+        <p>A place to learn about our program, courses, and how to enroll</p>
+
+        <h2>About ALX SE Program</h2>
+        <p>ALX Software Engineering program is a rigorous program that trains individuals in various programming languages and AI. We have a community of over 1000 students and offer hands-on projects such as the Shell project in C.</p>
+
+        <h2>Courses</h2>
+        <table style="width:100%">
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Programming</td>
+                <td>Learn various programming languages...</td>
+            </tr>
+            <tr>
+                <td>AI</td>
+                <td>Introduction to Artificial Intelligence...</td>
+            </tr>
+        </table>
+
+        <h2>Testimonials</h2>
+        <blockquote>
+            <p>"The ALX SE program was a transformative experience. The hands-on projects and the community were invaluable to my learning."</p>
+            <footer>Alumni 1</footer>
+        </blockquote>
+        <blockquote>
+            <p>"I can confidently say that ALX has equipped me with the skills and knowledge to excel in the tech industry."</p>
+            <footer>Alumni 2</footer>
+        </blockquote>
+
+        <h2>Enrollment</h2>
+        <p>To enroll in the ALX SE program, click the "Join Us" button at the top of the page.</p>
+    </div>
+</body>
+
+</html>
