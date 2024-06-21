@@ -1,1 +1,1 @@
-# full-stack-django-react
+# full-stack-django-react tutorial
