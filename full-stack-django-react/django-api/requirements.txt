@@ -1,3 +1,0 @@
-Django==4.0
-psycopg2_binary==2.9.2
-django-environ
