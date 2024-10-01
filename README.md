@@ -1,1 +1,1 @@
-# full-stack-django-react tutorial
+# Random learning projects
