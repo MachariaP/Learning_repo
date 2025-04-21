@@ -9,3 +9,13 @@ class Vehicle():
 # subclass
 class Car(Vehicle):
     pass
+
+
+# create an object from each class
+v = Vehicle()
+c = Car()
+
+v.description()
+# Prints I'm a Vehicle!
+c.description()
+# Prints I'm a Vehicle!
