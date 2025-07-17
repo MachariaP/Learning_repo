@@ -5,6 +5,7 @@ function App() {
     <>
       <header>
         <h1>Hello, World!</h1>
+        <button type="button">Click me!</button>
       </header>
     </>
   );
