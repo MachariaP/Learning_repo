@@ -38,6 +38,7 @@ function App(props) {
           <span className="visually-hidden"> tasks</span>
         </button>
       </div>
+      <h2 id="list-heading">3 Tasks Remaining</h2>
     </div>
   );
 }
