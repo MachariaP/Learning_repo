@@ -77,3 +77,36 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
 }
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.stack-small {
+  margin-bottom: 10px;
+}
+
+.c-cb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todo-label {
+  font-size: 1.1em;
+}
+
+.btn__danger {
+  background: #dc3545;
+  color: white;
+}
