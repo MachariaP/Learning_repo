@@ -9,6 +9,10 @@
   margin-bottom: 20px;
 }
 
+.stack-exception {
+  margin-bottom: 10px;
+}
+
 .label-wrapper {
   text-align: center;
 }
@@ -46,4 +50,30 @@
 .btn__lg {
   padding: 12px 24px;
   font-size: 1.2em;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.toggle-btn {
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+}
+
+.toggle-btn[aria-pressed="true"] {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
