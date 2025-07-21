@@ -1,0 +1,100 @@
+/* Navigation container */
+.navigation {
+  position: relative;
+  width: 400px; /* Fixed width for desktop, adjusted from 400% */
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; /* Dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin: 20px auto; /* Center on page */
+}
+
+/* Navigation list */
+.navigation ul {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* List items */
+.navigation ul li {
+  position: relative;
+  flex: 1; /* Equal width for each item */
+  height: 70px; /* Match container height */
+  z-index: 1;
+  text-align: center;
+}
+
+/* Links */
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Icon styling */
+.navigation ul li a .icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+/* Text styling */
+.navigation ul li a .text {
+  font-size: 14px;
+}
+
+/* Hover effect */
+.navigation ul li a:hover {
+  color: #00aaff; /* Bright blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Active state */
+.navigation ul li.active a {
+  color: #00aaff;
+  background: rgba(0, 170, 255, 0.2); /* Subtle background for active item */
+  border-radius: 8px;
+}
+
+/* Active indicator (animated underline) */
+.navigation ul li.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: #00aaff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .navigation {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .navigation ul li a .text {
+    display: none; /* Hide text on small screens */
+  }
+
+  .navigation ul li a .icon {
+    font-size: 20px; /* Smaller icons */
+    margin-right: 0;
+  }
+}
