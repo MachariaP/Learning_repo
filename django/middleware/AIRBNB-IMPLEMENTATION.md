@@ -30,6 +30,7 @@ airbnb_clone/
 │   │   ├── __init__.py
 │   │   ├── middleware/
 │   │   │   ├── __init__.py
+│   │   │   ├── utils.py
 │   │   │   ├── logging_middleware.py
 │   │   │   ├── auth_middleware.py
 │   │   │   ├── ip_blocker.py
@@ -53,6 +54,38 @@ airbnb_clone/
 ---
 
 ## 🚀 Step-by-Step Implementation
+
+### Step 0: Create Utility Functions
+
+Before implementing middleware, create a utility file for shared functions.
+
+**File:** `apps/core/middleware/utils.py`
+
+```python
+"""
+Utility functions for middleware components.
+"""
+
+def get_client_ip(request):
+    """
+    Get the real client IP address, handling proxies and load balancers.
+    
+    Args:
+        request: Django HttpRequest object
+    
+    Returns:
+        str: Client IP address
+    """
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        # X-Forwarded-For can contain multiple IPs, get the first one
+        ip = x_forwarded_for.split(',')[0].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
+    return ip
+```
+
+---
 
 ### Step 1: Initial Setup
 
@@ -109,6 +142,7 @@ import logging
 import json
 import time
 from datetime import datetime
+from .utils import get_client_ip
 
 logger = logging.getLogger(__name__)
 
@@ -170,15 +204,6 @@ class RequestLoggingMiddleware:
         response['X-Request-Duration'] = f"{duration:.4f}s"
         
         return response
-    
-    def get_client_ip(self, request):
-        """Get real client IP address"""
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-        return ip
 ```
 
 ---
@@ -279,6 +304,7 @@ from django.http import HttpResponseForbidden
 from django.conf import settings
 from django.core.cache import cache
 import logging
+from .utils import get_client_ip
 
 logger = logging.getLogger(__name__)
 
@@ -298,7 +324,7 @@ class IPBlockerMiddleware:
         self.whitelist = set(getattr(settings, 'IP_WHITELIST', []))
     
     def __call__(self, request):
-        client_ip = self.get_client_ip(request)
+        client_ip = get_client_ip(request)
         
         # Whitelist bypasses all checks
         if client_ip in self.whitelist:
@@ -320,15 +346,6 @@ class IPBlockerMiddleware:
             )
         
         return self.get_response(request)
-    
-    def get_client_ip(self, request):
-        """Get real client IP address, handling proxies"""
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
-        return ip
 
 
 class SuspiciousHeaderMiddleware:
@@ -386,6 +403,7 @@ from collections import defaultdict
 from django.http import JsonResponse
 from django.core.cache import cache
 import logging
+from .utils import get_client_ip
 
 logger = logging.getLogger(__name__)
 
@@ -477,11 +495,7 @@ class RateLimitMiddleware:
             return f"user_{request.user.id}"
         
         # Use IP for anonymous users
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0].strip()
-        else:
-            ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
+        ip = get_client_ip(request)
         return f"ip_{ip}"
     
     def get_rate_limit_for_path(self, path):

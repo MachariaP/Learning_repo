@@ -9,10 +9,11 @@ Test your knowledge of Django middleware, signals, and ORM concepts!
 ### Question #0
 **Which of the following methods connects a receiver function to a signal?**
 
-- [ ] Signal.emit
-- [x] **Signal.connect**
-- [ ] Signal.notify
-- [ ] Signal.link
+**Options:**
+1. Signal.emit
+2. **Signal.connect** ✓
+3. Signal.notify
+4. Signal.link
 
 **Explanation:** The `connect()` method is used to register a receiver function with a signal. When the signal is sent, all connected receivers are called.
 
@@ -34,10 +35,10 @@ post_save.connect(my_handler, sender=MyModel)
 ### Question #1
 **What is the main advantage of using Django signals?**
 
-- [ ] To execute code asynchronously
-- [x] **To decouple applications that need to be notified of events**
-- [ ] To increase the speed of request processing
-- [ ] To manage database transactions
+1. To execute code asynchronously
+2. **To decouple applications that need to be notified of events** ✓
+3. To increase the speed of request processing
+4. To manage database transactions
 
 **Explanation:** Signals allow certain senders to notify a set of receivers when an action has taken place. This helps decouple different parts of your application - one app doesn't need to know about another app's internals to react to events.
 
@@ -66,10 +67,10 @@ def update_inventory(sender, instance, created, **kwargs):
 ### Question #2
 **What should you use to ensure that a receiver function is not registered multiple times?**
 
-- [x] **dispatch_uid**
-- [ ] sender
-- [ ] weak=True
-- [ ] disconnect()
+1. **dispatch_uid** ✓
+2. sender
+3. weak=True
+4. disconnect()
 
 **Explanation:** The `dispatch_uid` parameter provides a unique identifier for the receiver, preventing duplicate registrations if the same code is imported multiple times.
 
@@ -103,10 +104,11 @@ post_save.connect(
 Entry.objects.filter(pub_date__year=2023)
 ```
 
-- [ ] Retrieve entries published exactly on January 1, 2023
-- [x] **Retrieve entries published in the year 2023**
-- [ ] Retrieve entries with a pub_date of 2023-01-01
-- [ ] Retrieve all entries published before 2023
+**Options:**
+1. Retrieve entries published exactly on January 1, 2023
+2. **Retrieve entries published in the year 2023** ✓
+3. Retrieve entries with a pub_date of 2023-01-01
+4. Retrieve all entries published before 2023
 
 **Explanation:** The `__year` lookup extracts the year from a date field and filters based on it. This returns all entries where the year portion of `pub_date` is 2023.
 
@@ -130,10 +132,10 @@ Entry.objects.filter(pub_date__year__lt=2023)
 ### Question #4
 **Which Django ORM method is used to retrieve a single object from the database that matches a query?**
 
-- [ ] filter()
-- [x] **get()**
-- [ ] all()
-- [ ] exclude()
+1. filter()
+2. **get()** ✓
+3. all()
+4. exclude()
 
 **Explanation:** The `get()` method returns a single object that matches the given query. It raises `DoesNotExist` if no object is found or `MultipleObjectsReturned` if more than one object matches.
 
@@ -173,10 +175,10 @@ user = User.objects.filter(email=email).first()  # Returns None if not found
 ### Question #5
 **What is the primary purpose of middleware in Django?**
 
-- [ ] To handle database queries
-- [x] **To globally alter Django's request or response processing**
-- [ ] To manage user authentication
-- [ ] To manage URL routing
+1. To handle database queries
+2. **To globally alter Django's request or response processing** ✓
+3. To manage user authentication
+4. To manage URL routing
 
 **Explanation:** Middleware is a framework of hooks into Django's request/response processing. It's a light, low-level plugin system for globally altering Django's input or output.
 
@@ -211,10 +213,10 @@ class MyMiddleware:
 ### Question #6
 **What happens if a middleware's __init__() method raises MiddlewareNotUsed?**
 
-- [ ] Django will raise an error
-- [x] **The middleware will be removed from the middleware chain**
-- [ ] The middleware will be called again with different arguments
-- [ ] Django will restart the server
+1. Django will raise an error
+2. **The middleware will be removed from the middleware chain** ✓
+3. The middleware will be called again with different arguments
+4. Django will restart the server
 
 **Explanation:** Raising `MiddlewareNotUsed` in `__init__()` tells Django to skip this middleware. This is useful for conditionally enabling middleware based on settings or environment.
 
@@ -247,10 +249,10 @@ class ConditionalMiddleware:
 ### Question #7
 **Which method in middleware is responsible for processing each request and returning a response?**
 
-- [ ] init
-- [ ] get_response
-- [x] **__call__**
-- [ ] process_view
+1. init
+2. get_response
+3. **__call__** ✓
+4. process_view
 
 **Explanation:** The `__call__` method is invoked for every request. It receives the request, optionally processes it, calls `get_response(request)` to continue the chain, and returns a response.
 
@@ -288,10 +290,10 @@ class MyMiddleware:
 ### Question #8
 **What is the purpose of using Q objects in Django queries?**
 
-- [ ] To perform database transactions
-- [x] **To create complex queries with logical operators**
-- [ ] To enforce foreign key constraints
-- [ ] To automatically generate primary keys
+1. To perform database transactions
+2. **To create complex queries with logical operators** ✓
+3. To enforce foreign key constraints
+4. To automatically generate primary keys
 
 **Explanation:** Q objects allow you to create complex queries using logical operators like OR (`|`), AND (`&`), and NOT (`~`). They're essential for building dynamic queries with multiple conditions.
 
@@ -341,10 +343,10 @@ User.objects.filter(
 ### Question #9
 **Which method would you use to create and save a model instance in a single step?**
 
-- [ ] save()
-- [x] **create()**
-- [ ] update()
-- [ ] add()
+1. save()
+2. **create()** ✓
+3. update()
+4. add()
 
 **Explanation:** The `create()` method creates a new instance and saves it to the database in one step, returning the created object.
 

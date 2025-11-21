@@ -39,7 +39,7 @@ Upon successful completion, learners will:
 
 ## 📋 Implementation Tasks
 
-Learners will:
+Learners will complete the following tasks:
 
 ### 1. Project Setup
 - Scaffold a Django project with an `apps/core` structure for separation of concerns

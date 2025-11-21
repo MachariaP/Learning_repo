@@ -63,21 +63,6 @@ If you're working on the Airbnb Clone or similar project:
 
 ---
 
-If you're completely new to middleware:
-1. Start with **[What is Middleware?](./01-basics/01-what-is-middleware.md)**
-2. Work through each section in order
-3. Try the code examples as you go
-4. Take notes of the "💡 Tips" and "⚠️ Important" sections
-
-### For Project-Based Learning:
-If you're working on the Airbnb Clone or similar project:
-1. Read the **[Project Guide](./PROJECT-GUIDE.md)** for objectives and outcomes
-2. Follow the **[Airbnb Implementation](./AIRBNB-IMPLEMENTATION.md)** for step-by-step instructions
-3. Complete the implementation tasks
-4. Test your knowledge with **[Quiz Questions](./QUIZ-QUESTIONS.md)**
-
----
-
 ## 💡 Learning Tips
 
 - **Take Your Time**: Don't rush through the basics
