@@ -168,7 +168,7 @@ class RequestLoggingMiddleware:
             'method': request.method,
             'path': request.path,
             'user': str(request.user) if request.user.is_authenticated else 'Anonymous',
-            'ip_address': self.get_client_ip(request),
+            'ip_address': get_client_ip(request),
             'user_agent': request.META.get('HTTP_USER_AGENT', '')[:200],
         }
         
