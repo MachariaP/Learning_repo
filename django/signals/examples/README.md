@@ -419,7 +419,7 @@ def audit_log_delete(sender, instance, **kwargs):
 >>> AuditLog.objects.first()
 <AuditLog: CREATE Product #1>
 >>> AuditLog.objects.first().changes
-{'created': True, 'values': {'id': '1', 'name': 'Widget', 'price': '9.99', ...}}
+{'created': True, 'values': {'id': '1', 'name': 'Widget', 'price': '9.99', 'stock': '100', 'is_active': 'True'}}
 
 # Update the product
 >>> product.price = 14.99

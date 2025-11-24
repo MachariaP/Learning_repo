@@ -304,7 +304,25 @@ author_stats = (
         posts=Count('posts'),
         total_views=Sum('posts__view_count'),
         total_comments=Count('posts__comments'),
-        avg_comments_per_post=Avg(Count('posts__comments'))
+    )
+)
+
+# Calculate average comments per post using annotation values
+# Note: For avg comments per post, we need total_comments / posts
+from django.db.models import FloatField, ExpressionWrapper
+from django.db.models.functions import Cast, NullIf
+
+author_stats = (
+    Author.objects
+    .annotate(
+        post_count=Count('posts'),
+        comment_count=Count('posts__comments'),
+    )
+    .annotate(
+        avg_comments_per_post=ExpressionWrapper(
+            Cast('comment_count', FloatField()) / NullIf('post_count', 0),
+            output_field=FloatField()
+        )
     )
 )
 

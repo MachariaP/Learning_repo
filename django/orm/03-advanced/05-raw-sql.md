@@ -248,14 +248,19 @@ def search_books(query):
 
 ```python
 # PostgreSQL array aggregation
-def get_authors_with_genres():
+def get_authors_with_categories():
+    """
+    Get authors with all their book categories using PostgreSQL array_agg.
+    Note: This uses category from the Book model defined in examples.
+    """
     with connection.cursor() as cursor:
         cursor.execute('''
             SELECT 
                 a.name,
-                array_agg(DISTINCT b.genre) as genres
-            FROM authors a
-            JOIN books b ON a.id = b.author_id
+                array_agg(DISTINCT c.name) as categories
+            FROM myapp_author a
+            JOIN myapp_book b ON a.id = b.author_id
+            JOIN myapp_category c ON b.category_id = c.id
             GROUP BY a.id, a.name
         ''')
         return cursor.fetchall()
