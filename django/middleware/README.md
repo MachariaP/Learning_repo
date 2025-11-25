@@ -12,7 +12,7 @@ This learning path is organized into three levels:
 
 ---
 
-## 🎯 Quick Navigation
+## 🎯 Quick Navigation.
 
 ### Level 1: Basics
 📁 **[01-basics/](./01-basics/)**
@@ -45,7 +45,7 @@ This learning path is organized into three levels:
 
 ---
 
-## 🚦 Getting Started
+## 🚦 Getting Started.
 
 ### For Self-Paced Learning:
 If you're completely new to middleware:
@@ -63,7 +63,7 @@ If you're working on the Airbnb Clone or similar project:
 
 ---
 
-## 💡 Learning Tips
+## 💡 Learning Tips.
 
 - **Take Your Time**: Don't rush through the basics
 - **Practice**: Type out the examples yourself, don't just read
