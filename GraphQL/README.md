@@ -940,12 +940,18 @@ npm install apollo-server graphql
 - ✅ **Log Errors** on the server, sanitize for client
 
   ```javascript
-  throw new Error('User not found', {
+  const { GraphQLError } = require('graphql');
+  
+  throw new GraphQLError('User not found', {
     extensions: {
       code: 'USER_NOT_FOUND',
       userId: args.id
     }
   });
+  
+  // Or use Apollo Server error classes
+  const { UserInputError } = require('apollo-server');
+  throw new UserInputError('Invalid user ID provided');
   ```
 
 #### **Documentation:**
