@@ -515,6 +515,8 @@ enum Role {
   MODERATOR
 }
 
+# Custom scalar - requires implementation in resolvers
+# Use libraries like 'graphql-scalars' for common scalars (DateTime, EmailAddress, etc.)
 scalar DateTime
 
 type User {
@@ -523,6 +525,11 @@ type User {
   role: Role!
   createdAt: DateTime!
 }
+```
+
+**Note:** Custom scalars like `DateTime` require a resolver implementation. Use the `graphql-scalars` package for production-ready scalar types:
+```bash
+npm install graphql-scalars
 ```
 
 **Complete Schema Example:**
